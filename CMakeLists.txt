@@ -6,6 +6,7 @@ project(APRILTAGS)
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(CMAKE_CXX_FLAGS "-frounding-math")
 
 if(APPLE)
   include_directories(/opt/local/include) # MacPorts

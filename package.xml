@@ -13,6 +13,8 @@
 
   <license>BSD</license>
 
+  <depend>cgal</depend>
+
   <exec_depend>catkin</exec_depend>
 
   <export>
