@@ -13,8 +13,6 @@ add_library(apriltags SHARED
 
 set(AT_LIBS apriltags ${OPENCV_LDFLAGS})
 
-target_link_libraries(apriltags ${AT_LIBS})
-
 add_executable(camtest camtest.cpp)
 target_link_libraries(camtest ${AT_LIBS})
 
