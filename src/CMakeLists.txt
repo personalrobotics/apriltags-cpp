@@ -1,4 +1,4 @@
-add_library(apriltags
+add_library(apriltags SHARED
   CameraUtil.cpp
   DebugImage.cpp
   Geometry.cpp 
@@ -37,3 +37,7 @@ if (CAIRO_FOUND)
   target_link_libraries(maketags ${CAIRO_LIBRARIES} ${AT_LIBS} ${CAIRO_LIBS})
 
 endif() 
+
+install(TARGETS apriltags DESTINATION lib/)
+install(DIRECTORY src/ DESTINATION include/apriltags-cpp FILES_MATCHING PATTERN "*.h" PATTERN ".svn" EXCLUDE)
+
