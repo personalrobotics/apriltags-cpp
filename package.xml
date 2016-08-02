@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>apriltags_cpp</name>
+  <version>0.0.0</version>
+  <description>
+    apriltags C++ core library
+  </description>
+  <url type="repository">https://github.com/personalrobotics/apriltags-cpp</url>
+
+  <maintainer email="awalsman@andrew.cmu.edu">Aaron Walsman</maintainer>
+  <author email="awalsman@andrew.cmu.edu">Aaron Walsman</author>
+  <author email="pkv@cs.cmu.edu">Pras Velagapudi</author>
+
+  <license>BSD</license>
+
+  <depend>cgal</depend>
+
+  <buildtool_depend>cmake</buildtool_depend>
+
+  <exec_depend>catkin</exec_depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>
