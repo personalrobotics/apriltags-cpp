@@ -1,0 +1,3 @@
+set(apriltags_cpp_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/../../../include)
+set(apriltags_cpp_LIBRARIES ${CMAKE_CURRENT_LIST_DIR}/../../../lib/@CMAKE_SHARED_LIBRARY_PREFIX@apriltags@CMAKE_SHARED_LIBRARY_SUFFIX@)
+

@@ -37,5 +37,3 @@ if (CAIRO_FOUND)
 endif() 
 
 install(TARGETS apriltags DESTINATION lib/)
-install(DIRECTORY src/ DESTINATION include/apriltags_cpp FILES_MATCHING PATTERN "*.h" PATTERN ".svn" EXCLUDE)
-

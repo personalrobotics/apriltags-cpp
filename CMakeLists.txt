@@ -4,9 +4,10 @@ cmake_minimum_required(VERSION 2.6)
 
 project(APRILTAGS)
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-set(CMAKE_CXX_FLAGS "-frounding-math")
 
 if(APPLE)
   include_directories(/opt/local/include) # MacPorts
@@ -57,4 +58,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 add_subdirectory(src)
 
-install(FILES package.xml DESTINATION share/apriltags-cpp)
+install(DIRECTORY src/ DESTINATION include/apriltags_cpp FILES_MATCHING PATTERN "*.h" PATTERN ".svn" EXCLUDE)
+install(FILES package.xml DESTINATION share/apriltags_cpp)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake.in "${PROJECT_BINARY_DIR}/apriltags_cppConfig.cmake" @ONLY)
+install(FILES "${PROJECT_BINARY_DIR}/apriltags_cppConfig.cmake" DESTINATION share/apriltags_cpp/cmake)
