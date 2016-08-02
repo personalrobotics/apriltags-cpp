@@ -1,4 +1,4 @@
-add_library(apriltags
+add_library(apriltags SHARED
   CameraUtil.cpp
   DebugImage.cpp
   Geometry.cpp 
@@ -12,8 +12,6 @@ add_library(apriltags
 )
 
 set(AT_LIBS apriltags ${OPENCV_LDFLAGS})
-
-target_link_libraries(apriltags ${AT_LIBS})
 
 add_executable(camtest camtest.cpp)
 target_link_libraries(camtest ${AT_LIBS})
@@ -37,3 +35,5 @@ if (CAIRO_FOUND)
   target_link_libraries(maketags ${CAIRO_LIBRARIES} ${AT_LIBS} ${CAIRO_LIBS})
 
 endif() 
+
+install(TARGETS apriltags DESTINATION lib/)
